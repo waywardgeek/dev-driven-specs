@@ -16,7 +16,8 @@ knowing it.
 
 Cadence executed the second edition in three days, almost fully autonomously.
 In less than two months of nights and weekends, I worked with AI to finish the
-third edition. The agent I use today is Ensemble V3, built by giving Ensemble V2
+third edition. The agent I use today is [Ensemble V3](https://github.com/waywardgeek/ensemble),
+built by giving Ensemble V2
 the book and graders and asking GPT-6 Astra to execute it autonomously and rewrite
 the book for C# rather than Go. **I gave Astra a book. Astra gave me an AI coding
 agent.** Along the way, I invited my collaborator to choose a name: Cadence.
@@ -38,6 +39,8 @@ an artifact of that execution, rather than the only place our knowledge lives.
 The human becomes expert through development, not by trying to decipher unfamiliar
 generated code afterward. **Build with the AI. Become the expert. Encode what you
 learn so the next agent can build it again.** That is what this repository teaches.
+
+**See the result: [Ensemble—the coding agent and the executable book that built it](https://github.com/waywardgeek/ensemble).**
 
 ## Try it now
 

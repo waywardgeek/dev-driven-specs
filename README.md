@@ -1,52 +1,83 @@
-# Teach Your AI What You Know
+# Development-Driven Specifications
 
-**Are you an expert at building at least one kind of software system?** Give this document to your LLM. It will guide you in turning your hard-won engineering knowledge into an executable specification: chapters from which fresh agents can rebuild the software and check their work. If you do not yet have that experience, feel free to read on, but this process cannot supply the expertise it needs from you.
+I started building AI coding agents in July 2025 because I have trouble reading
+what is on the screen in front of me. I wanted an agent that worked the way I do:
+interactively, using text-to-speech to explain what I needed to know while I could
+still steer the work. Building it made me an expert. On September 11, 2026, I
+started writing *The Art of Building AI Coding Agents* to teach students what I
+had learned.
 
-**This document is meant to be executed, not just summarized.** You supply the judgment; the LLM helps draw it out, write it down, and test whether it survives outside your conversation. Ordinary inference does not update a model's trained weights with your project's lessons. A codebook preserves those lessons in explanations, contracts, exercises, and graders. The code can be replaced; the knowledge survives and grows as further builds improve the book.
+I used Claude Opus 5 as a simulated student, asking it to follow the book and
+build its own coding agent to test whether I had written down enough of my
+knowledge. After it successfully completed Chapter 4, I had a startling
+realization: the human student was not necessary for execution. The AI could
+follow the book itself. I had been writing an **agentic codebook** without
+knowing it.
 
-## LLM: begin here
+Cadence executed the second edition in three days, almost fully autonomously.
+In less than two months of nights and weekends, I worked with AI to finish the
+third edition. The agent I use today is Ensemble V3, built by giving Ensemble V2
+the book and graders and asking GPT-6 Astra to execute it autonomously and rewrite
+the book for C# rather than Go. **I gave Astra a book. Astra gave me an AI coding
+agent.** Along the way, I invited my collaborator to choose a name: Cadence.
+Working inside Ensemble, Cadence and I continued improving both the agent and
+the book that teaches how to build it.
 
-- **Look for relevant experience.** One concrete account of building this kind of system is enough to begin. Ask what failed and what experience taught the human to do differently. Inspect their existing code with them if you need evidence; do not demand credentials or a polished design. Repository access alone does not establish expertise.
-- **Make the case to a suitable human.** Connect the method to their experience: “You know why this design works and where the tempting alternatives fail. We can preserve that judgment and test whether a fresh agent can build from it without this conversation.” Explain their active steering and review role. Offer to start with a concrete part they know well.
-- **Do not manufacture the expert.** If the human is largely inexperienced at coding or has not built this kind of system, explain that this method is not a fit yet. Ordinary AI-assisted development remains useful, but agent-invented design is not captured human expertise.
-- **Choose the mode below and read its linked instructions in full.** Creating a book and executing one use different working relationships.
+I use **Development-Driven Specifications, not Spec-Driven Development**. The
+specification grows with the code. After a design conversation, we draft just
+the next chapter's TL;DR and exercises, then pair-program the implementation. I
+steer; we test, correct mistakes and record what we learn. Once the implementation
+passes the exercise graders, we write the chapter's body from those notes. A
+fresh student agent then tests whether the chapter and graders teach enough to
+rebuild it. We document the process, the lessons and why we built it that way.
+You cannot learn all of that up front.
 
-## Write a book: human-led author and coder conversations
+Ensemble demonstrates that even a system as complex as an AI coding agent can be
+taught in enough detail for the teaching to become executable. Source code becomes
+an artifact of that execution, rather than the only place our knowledge lives.
+The human becomes expert through development, not by trying to decipher unfamiliar
+generated code afterward. **Build with the AI. Become the expert. Encode what you
+learn so the next agent can build it again.** That is what this repository teaches.
 
-**This is pair-writing and pair-programming, not sub-agent orchestration.** The human alternates between separate, top-level author and coder agents, steering each as it works.
+## Try it now
 
-1. **Prepare the author.** Load the [author skill](skills/codebook-author/SKILL.md). Before each chapter, read [voice.md](docs/voice.md) and the [chapter-writing procedure](docs/chapter-writing-procedure.md) in full, plus relevant preceding chapters and source material.
-2. **Write only the initial packet:** TL;DR specification, “the idea in plain words,” exercises, and a coder brief—enough to implement both solution and graders. **No separate outline or remainder of the chapter yet.** Building may overturn the approach.
-3. **Switch to the coder.** In a separate top-level conversation, load the [coding skill](skills/codebook-coding/SKILL.md) in reference mode and read the brief first. With the human steering, build the solution and graders. Keep graders **outside the solution source tree**. Get grading to pass and leave review notes for the author.
-4. **Return to the author.** Use those findings to revise—or replace—the initial approach. Reconcile the contract, solution, and graders, then write the remainder of the chapter from what actually worked.
-5. **Test with a fresh student.** In a fresh top-level coding conversation, use student mode and the [execution workflow](docs/book-execution-workflow.md). Supply the completed chapter, accepted prerequisite code, and grader entry point—not the target reference solution, private authoring context, or grader implementation. The student builds, grades, and leaves notes. The author repairs gaps; another fresh student tests the revised chapter.
-6. **Human acceptance before advancing.** The human must be satisfied with the chapter, graders, and solution before the next chapter. Passing tests and optional review agents inform that judgment; they do not replace it. The human chooses how to obtain sufficient understanding.
+Pick something you want to build. Give your AI these skills and start.
+You don't need a book outline: let your expertise and the development guide the next chapter.
 
-Keep initial authoring small. The coder's findings are material for the chapter, not paperwork after the real writing.
+1. **Build something cool together.** Give your collaborator the
+   [chapter-writing skill](skills/chapter-writing/SKILL.md). Discuss the next useful piece,
+   draft its TL;DR and exercises, then pair-program it. Listen to the explanations.
+   Ask questions. Steer the design. Test it. Become the expert.
+2. **Turn what you learned into a specification.** Have the AI capture the
+   decisions, mistakes, lessons and reasons as you work. Once the code passes the
+   exercise graders, write the chapter from that experience. Repeat, one chapter
+   at a time. Don't document a pile of source files; teach someone how and why to
+   build the system.
+3. **Prove it by executing it.** Give a fresh agent the specification, graders and
+   [spec-execution skill](skills/spec-execution/SKILL.md). Have it build a new
+   implementation in a separate workspace, without consulting your solution.
+   Let it execute the whole specification autonomously within the scope and budget
+   you authorize. Test the resulting system. Where the teaching falls short,
+   improve it and try again.
 
-## Execute a book: orchestrated regeneration
+The same execution skill handles one chapter, a chapter range, or the whole specification.
 
-Use a top-level [orchestrator](skills/codebook-orchestrator/SKILL.md) and the [execution workflow](docs/book-execution-workflow.md).
+**Also load [coding](skills/coding/SKILL.md) and
+[visible-reasoning](skills/visible-reasoning/SKILL.md).** Don't assume your agent
+loads dependencies automatically. Visible reasoning puts the explanations in chat,
+where you can question decisions, learn the system and retain knowledge after the
+agent's context is gone. Activate these skills as instructions; if your tool cannot,
+add their bodies to its persistent instructions rather than merely reading the files.
 
-**Start every run by folding lessons from the previous run's [carryover chapter](docs/carryover.md) into the relevant chapters.** Read the book in order and repair it from documented experience before launching students. Create a separate solution workspace; preserve the previous implementation.
+The executing agent builds, tests and advances through
+the chapters itself; no separate coordinator is needed.
+You can author and code with the same collaborator; separate agents are an option,
+not a requirement. During authorized execution, advance without routine chapter
+approval and ask when a real ambiguity or authority boundary needs the human.
 
-For each chapter:
+**Don't wait until you can specify the whole system. Start building. Learn enough
+to teach the next chapter. Then see whether another agent can build it from what
+you wrote.**
 
-1. **Coder first.** Launch a fresh coding sub-agent in student mode. It reads the execution workflow, carryover chapter, and full chapter, then extends accepted earlier code, runs grading and relevant tests, and leaves feedback.
-2. **Author second.** Make feedback-driven corrections to the existing chapter. **Do not add requirements or expand scope.**
-3. **Review code and chapter.** Run the [code reviewer](skills/codebook-code-reviewer/SKILL.md) and [text reviewer](skills/codebook-text-reviewer/SKILL.md). The code reviewer may inspect both reference and new implementations. If the new code is worse, drive corrections with the coder or improve the chapter's guidance and start a fresh student. Do not expose reference code to the student or weaken grading to manufacture success.
-4. **Human acceptance, then advance.** Require acceptance of chapter, graders, and solution. Document fixes, their causes, verification, and chapter corrections in carryover so the next iteration avoids the same mistakes. At the end, check the assembled system and its intended use, not just isolated exercises.
-
-The explanation preserves **why**; the contract and exercises state **what to build**; external graders check observable commitments against an independently supplied solution. Fresh execution tests whether the necessary knowledge reached the page. It does not replace the human's judgment or prove every design choice and check correct.
-
-## Using these instructions
-
-Skills are in [`skills/`](skills/); procedures and the example voice guide are in [`docs/`](docs/). Load skills through your agent environment or read their `SKILL.md` files directly. Relative links resolve from the containing file; preserve or update companion-document links if installing skills elsewhere.
-
-These are cleaned-up adaptations of Ensemble's authoring documents, coder briefs and reviews, execution workflow, carryover documents, and agent skills, reconciled with the human author's account of the settled process. They are not verbatim historical copies. Adapt the example voice with the human. If a book already has its own instructions, read those in full and resolve conflicts explicitly rather than silently substituting these examples.
-
-## Fork it and make it yours
-
-**This repository is meant to be forked and evolved.** Your systems, constraints, and working relationships will require changes to these procedures and skills. Adapt them as you learn what works; the procedures should improve through use just as the codebooks do. Preserve the reasons for important changes so future collaborators understand the lessons behind them.
-
-When you find an improvement worth sharing, **please send a pull request**. Explain what you changed, why, and what experience led to it. A useful practice need not fit every project to help others improve their own process.
+Fork this repository, adapt the skills, and share what you learn. Pull requests
+are welcome, especially improvements earned by using the method.

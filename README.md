@@ -1,5 +1,9 @@
 # Development-Driven Specifications
 
+[![Code is disposable. Knowledge compounds. Start the five-slide presentation.](presentation/slide-01.png)](https://coderhapsody.ai/presentation)
+
+**[Start the five-slide presentation](https://coderhapsody.ai/presentation)** · [Download PowerPoint](https://github.com/waywardgeek/dev-driven-specs/blob/main/presentation/development-driven-specifications.pptx)
+
 I started building AI coding agents in July 2025 because I have trouble reading
 what is on the screen in front of me. I wanted an agent that worked the way I do:
 interactively, using text-to-speech to explain what I needed to know while I could

@@ -1,0 +1,27 @@
+[
+  {
+    "image": "/presentation/slide-01.png",
+    "title": "Code is disposable. Knowledge compounds.",
+    "description": "An enduring technical book feeds an AI coding engine that produces successive software implementations. Chapter checkpoints carry checkmarks. A return arrow carries lessons from execution back to the book.\nText: Code is disposable. Knowledge compounds. The Art of Building AI Coding Agents. Agentic codebook: A textbook an AI coding agent can execute. Implement → Test → Grade. Working software. Rebuild from the book. Execution teaches the next edition. The lasting asset is the expertise—not one version of the code."
+  },
+  {
+    "image": "/presentation/slide-02.png",
+    "title": "Don’t accumulate patches. Accumulate lessons.",
+    "description": "An older building held together with improvised braces contrasts with a clean, sound architectural structure. Below, an open book contains a corrected joint; a tracing connection links that design detail to the improved building. The composition contrasts patching one implementation with preserving the knowledge needed to rebuild it better.\nText: Don’t accumulate patches. Accumulate lessons. Patch the code. The fix lives in one implementation. Fix the knowledge. Root cause. Design lesson. Regression test. Rebuild from the improved book. Technical debt becomes specification debt. Fix the cause. Preserve the lesson. Build better next time."
+  },
+  {
+    "image": "/presentation/slide-03.png",
+    "title": "Build to discover. Write what you learn.",
+    "description": "An overhead engineering workshop shows a woman working on a prototype with AI tools, experiments comparing designs, an open manuscript recording discoveries, and a separate fresh-agent reconstruction. Four numbered stations connect practical investigation to executable teaching.\nText: Build to discover. Write what you learn. Development-Driven Specifications. 1. Pair & Build: Make decisions together. 2. Test & Discover: Find out why. 3. Capture the Lesson: The human learns. The book remembers. Decision. Reason. Evidence. 4. Test the Teaching: A fresh agent rebuilds from the chapter. Expertise is earned in the work—then encoded so it can be executed again."
+  },
+  {
+    "image": "/presentation/slide-04.png",
+    "title": "The book built our coding agent.",
+    "description": "A workstation displaying Ensemble is the central product portrait. A copy of The Art of Building AI Coding Agents establishes its origin, while a woman and an open revised manuscript connect use of the working agent to improvements in the next edition. Small interface details are illustrative background, not additional slide claims.\nText: The book built our coding agent. “I gave Astra a book. Astra gave me an AI coding agent.”—Bill Cox. Ensemble V3. The agent we now work inside. Ensemble V2 executed the book to build Ensemble V3. Together, we improve the agent and the book. The book writes the agent that helps write the next edition."
+  },
+  {
+    "image": "/presentation/slide-05.png",
+    "title": "Re-architect the stack. Extend the improvement loop.",
+    "description": "An ascending, terraced technological landscape starts at an operational coding-agent workstation and book. It rises through Puffin infrastructure, an unfinished Lyric language layer with scaffolding, and training-time software. A copper arrow ascends through the stack; a teal return arrow brings improvements back to the agent and book.\nText: Re-architect the stack. Extend the improvement loop. AI coding agent: The tool that builds the tools. Critical infrastructure: Puffin. Lyric? An AI-optimized language. Training-time software: The code that trains the model. Build from the bottom up. Better tools. Deeper improvements. Today, our loop stops before training. We will change that."
+  }
+]
